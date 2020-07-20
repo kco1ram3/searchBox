@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Search Box</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/searchBox.css">
+</head>
+
+<body>
+
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Search Hotels</h4>
+                    <form>
+                        <div class="form-group form-group-icon-left"><i class="fa fa-map-marker input-icon"></i>
+                            <label>Where are you going?</label>
+                            <input class="form-control" placeholder="City, Airport, Point of Interest" type="text" autocomplete="off" spellcheck="false" />
+                        </div>
+                        <div class="input-daterange">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
+                                        <label>Check-in</label>
+                                        <input class="form-control" name="start" type="text" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
+                                        <label>Check-out</label>
+                                        <input class="form-control" name="end" type="text" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" type="button">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div id='searchbox_hotel_1'></div>
+        </div>
+        <div class="col-md-3">
+            <div id='searchbox_hotel_2'></div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
+    <script src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/searchBox.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#searchbox_hotel_1').searchbox();
+            $('#searchbox_hotel_2').searchbox({
+                titleText: 'ค้นหาโรงแรม',
+                searchQuestionText: 'คุณกำลังจะไปที่ไหน?',
+                startDateText: 'วันที่เข้าพัก',
+                endDateText: 'วันที่ออก',
+                buttonText: 'ค้นหา'
+            });
+        })
+    </script>
+</body>
+
+</html>
